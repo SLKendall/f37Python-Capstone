@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block title %} Box Office Buff {% endblock %}
+
+{% block body %}
+    <h1>Welcome to Box Office Buff!</h1>
+
+    <h2 class="subhead">Please Login or Create an Account</h2>
+    
+    <div class = "accounts">
+    <h3>Log in</h3>
+    <form action="/login" method = "POST">
+        <p>
+            Email <input type="text" name="email">
+        </p>
+
+        <p>
+            Password <input type="password" name="password">
+        </p>
+
+        <p>
+            <button type = "submit"><span>>Login</span></button>
+        </p>
+    </form>
+
+    <h3>Create an Account</h3>
+    
+    <form action="/users" method = "POST">
+        <p>
+            Email <input type="text" name="email">
+        </p>
+
+        <p>
+            Password <input type="password" name="password">
+        </p>
+
+        <p>
+            Username <input type="text" name="username">
+        </p>
+        
+        <p>
+            <button type = "submit"><span>Create account</span></button>
+        </p>
+
+    </form>
+    </div>
+
+{% endblock %}

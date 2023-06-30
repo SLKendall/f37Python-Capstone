@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ user.username }}{% endblock %}
+
+{% block body %}
+
+<h1>{{ user.username }}</h1>
+<h1>Ratings: </h1>
+
+<div class = "ratings-list">
+<ul>
+    {% for rating in user.ratings %}
+        <li>
+            <p>Movie: {{ rating.movie.title }}</p>
+            <p>Score: {{ rating.score }}</p>
+            <p>Review: {{ rating.review }}</p>
+        </li>
+        <br>
+        {% if "user_email" in session %}
+            <a href="{{ url_for('delete_rating', rating_id=rating.rating_id) }}">
+                <button type="submit" class="delete-btn">Delete</button>
+            </a>
+        {% endif %}
+    {% endfor %}
+</ul>
+</div>
+{% endblock %}

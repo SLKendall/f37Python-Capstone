@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ movie.title }}{% endblock %}
+
+{% block body %}
+<h1>{{ movie.title }}</h1>
+
+{% if "user_email" in session %}
+  <div>
+    <h3>Rating</h3>
+
+    <div class = "review">
+      <img id="loading-reel" class="hidden" src="/static/Film_Rolling(python).gif"/>
+      <form action = "/rating/{{ movie.movie_id}}" method="POST">
+        <input type="radio", name="score", value="1">
+        <label for="1">1</label>
+        <input type="radio", name="score", value="2">
+        <label for="2">3</label>
+        <input type="radio", name="score", value="3">
+        <label for="3">3</label>
+        <input type="radio", name="score", value="4">
+        <label for="4">4</label>
+        <input type="radio", name="score", value="5">
+        <label for="5">5</label>
+        
+        <p>
+          Review: <input type="text" name="review">
+        </p>
+
+        <button class="submit" type="submit"><span>Submit rating for {{ movie.title }}</span></button>
+      </form>
+    </div>
+    
+  </div>
+{% endif %}
+<div class = "synopsis"></div>
+<p>
+  {{ movie.synopsis }}
+</p>
+
+<img width = "500px" src="{{ movie.movie_poster }}">
+{% endblock %}

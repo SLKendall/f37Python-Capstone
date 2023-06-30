@@ -1,0 +1,111 @@
+
+* {
+    font-family: monospace;
+    font: Lucidia Console;
+    margin: 0;
+    padding: 0;
+    color: #886F68;
+    font-size:16px;
+}
+
+.hidden {
+    display: none;
+}
+
+h1{
+    padding:15px;
+}
+
+.subhead{
+    padding:15px;
+    padding-left: 50px;
+}
+
+head{
+    background-color: #886F68;
+    border-style: outset;
+    border-color: #886F68;
+    border-width: 15px;
+    display:flex;
+    align-items: baseline;
+}
+
+.navbar{
+    display:flex;
+    align-items: baseline;
+    gap: 20px;
+    font-size: 16px;
+    list-style-type: none;
+}
+
+a{
+    color: #424C55;
+}
+
+a:hover{
+    color: #886F68;
+    transition: 2s;
+    
+}
+.delete-btn{
+    background-color: #3D2C2E;
+    color: #F5EDF0;
+}
+
+.accounts{
+    font-size: 16px;
+    display:flex;
+    align-items: baseline;
+    justify-content: space-evenly;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #424C55;
+    color: #F5EDF0
+}
+
+button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #D1CCDC;
+    border: none;
+    color: #886F68;
+    text-align: center;
+    font-size: 12px;
+    padding: 10px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  button span:after {
+    content: '\00bb';
+    position: relative;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  button:hover span {
+    padding-right: 25px;
+  }
+  
+  button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+  .user_list{
+    display:flex;
+    padding: 20px;
+    background-color: #D1CCDC;
+    list-style-type: none;
+    gap: 10px 30px;
+  }
